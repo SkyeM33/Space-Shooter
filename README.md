@@ -1,7 +1,7 @@
 # Space-Shooter
 Project 2 for MSCH-C220
 
-Description
+Arcade space shooter
 
 ## Implementation
 
@@ -10,6 +10,7 @@ Description
 ## References
 
 ## Future Development
+To be made into a full arcade space shooter with enemies and asteroids. Also for original assets to be added.
 
 ## Created by
 Skye Murrell
