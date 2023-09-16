@@ -4,7 +4,10 @@ var speed = 5
 var max_speed = 1000
 var rotate_speed = 0.15
 var nose = Vector2(0, -60)
+var health = 10
 var Bullet = load("res://Player/bullet.tscn")
+var Effects = null
+var Explosion = load("res://Effects/explosion.tscn")
 
 
 func get_input():
@@ -32,9 +35,26 @@ func _physics_process(_delta):
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("Shoot"):
+		var bullet = Bullet.instantiate()
+		bullet.rotation = rotation
+		bullet.global_position = global_position + nose.rotated(rotation)
 		var Effects = get_node_or_null("/root/Game/Effects")
 		if Effects != null:
-			var bullet = Bullet.instantiate()
-			bullet.rotation = rotation
-			bullet.global_position = global_position + nose.rotated(rotation)
 			Effects.add_child(bullet)
+			
+func damage(d):
+	health -= d
+	if health <= 0:
+		Effects = get_node_or_null("/root/Game/Effects")
+		if Effects != null:
+			var explosion = Explosion.instantiate()
+			Effects.add_child(explosion)
+			explosion.global_position = global_position
+			hide()
+			await explosion.animation_finished
+		queue_free()
+
+
+func _on_area_2d_body_entered(body):
+	if body.name != "Player":
+		damage(100)
