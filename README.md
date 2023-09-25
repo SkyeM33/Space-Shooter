@@ -8,7 +8,8 @@ Arcade space shooter
 ## What Makes this a Game?
 
 ## References
-Current assets from Kenney.com
+Current assets from Kenney.nl Simple Space: https://kenney.nl/assets/simple-space
+Used Hyperspace font: https://www.dafont.com/hyperspace.font
 
 ## Future Development
 To be made into a full arcade space shooter with enemies and asteroids. Also for original assets to be added as well as a boss fight.
