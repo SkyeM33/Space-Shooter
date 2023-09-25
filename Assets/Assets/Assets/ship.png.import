@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd636ws17r47e"
-path="res://.godot/imported/meteor.png-9aeb89fd1951ed252088f95f65bb620a.ctex"
+uid="uid://wekr4ssb2y2n"
+path="res://.godot/imported/ship.png-89673da3bfe129a84380bb63aadbca1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets/Assets/meteor.png"
-dest_files=["res://.godot/imported/meteor.png-9aeb89fd1951ed252088f95f65bb620a.ctex"]
+source_file="res://Assets/Assets/Assets/ship.png"
+dest_files=["res://.godot/imported/ship.png-89673da3bfe129a84380bb63aadbca1e.ctex"]
 
 [params]
 
