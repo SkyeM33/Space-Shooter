@@ -1,5 +1,6 @@
 extends Node
 
+
 var VP = Vector2.ZERO
 var score = 0
 var lives = 0
@@ -27,8 +28,9 @@ func _process(_delta):
 				menu.show()
 	var Asteroid_Container = get_node_or_null("/root/Game/Asteroid_Container")
 	var Enemy_Container = get_node_or_null("/root/Game/Enemy_Container")
+	var Boss = get_node_or_null("/root/Game/Boss")
 	if Asteroid_Container != null and Enemy_Container != null:
-		if Asteroid_Container.get_child_count() == 0 and Enemy_Container.get_child_count() == 0:
+		if Asteroid_Container.get_child_count() == 0 and Enemy_Container.get_child_count() == 0 and Boss == null:
 			get_tree().change_scene_to_file("res://UI/end_game.tscn")
 		
 		
@@ -62,3 +64,4 @@ func reset():
 	score = 0
 	time = 30
 	lives = 5
+

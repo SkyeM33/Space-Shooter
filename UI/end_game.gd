@@ -2,7 +2,9 @@ extends Control
 
 
 func _ready():
-	$Label.text = "Thanks for playing!\nYour final score was " + str(Global.score) + "."
+	$Label.text = "Game over\nThanks for playing!\nYour final score was " + str(Global.score) + "."
+	if Global.score == 1400:
+		$Label.text = "Game over\nThanks for playing!\nYour final score was " + str(Global.score) + ".\nHighest possible score!\nGreat job! The galaxy is safe!"
 
 func _on_play_pressed():
 	Global.reset()

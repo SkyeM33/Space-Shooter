@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://npm6wd174rq"]
+
+[ext_resource type="Script" path="res://Enemy/Boss.gd" id="1_rps88"]
+[ext_resource type="Texture2D" uid="uid://dhhpaamvbkp6h" path="res://Assets/Assets/Assets/boss.png" id="2_hnk2h"]
+
+[node name="Boss" type="CharacterBody2D"]
+position = Vector2(500, -600)
+script = ExtResource("1_rps88")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hnk2h")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(21, -147.9, 21, -146.3, 64.3, -128, 79.8, -128, 100.7, -134, 112.5, -134, 118, -131.2, 118, -129.5, 124.4, -118, 121.7, -118, 120.6, -113, 118.7, -113, 114, -108.9, 127, -97.9, 127, -95, 129.3, -79, 127, -79, 118, -66, 115.1, -66, 97, -64.9, 97, -66.7, 88, -70.7, 88, -72.2, 79, -81.2, 79, -84, 78.1, -101, 69.9, -101, 56.3, -101.8, 70, -88.9, 70, -86.7, 81, -71.7, 81, -69.5, 89, -52.4, 89, -48.3, 96, -24.3, 96, -1.7, 83, 38.3, 93, 49.2, 93, 52.1, 90, 54.1, 90, 55, 92.3, 73, 90.5, 73, 88.5, 80, 86.9, 80, 80.9, 87, 78, 87, 63, 90.5, 63, 88.5, 56.3, 86.5, 51.8, 91, 49.2, 91, 47.5, 89.3, 16.8, 120, 14.5, 120, -5.39999, 134, -9.7, 134, -40.7, 110, -56.6, 117, -66.3, 117, -83, 111.4, -83, 109.9, -92, 101.9, -92, 99.4, -96, 89.4, -96, 84.8, -91.6, 66, -90.2, 66, -82.8, 52, -96, 23.4, -96, 20, -104, -9.7, -104, -17, -105, -51, -103.8, -51, -101.8, -67, -100.4, -67, -93.4, -86, -92.1, -86, -84.1, -99, -82.9, -99, -68.9, -114, -66.6, -114, -46.6, -127, -43.3, -127, -35, -129.5, -19.7, -142, -17.4, -142, -4, -147.4, -4, -149.1)
+
+[node name="Timer2" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

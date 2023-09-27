@@ -19,10 +19,10 @@ func _process(_delta):
 	position = position + velocity
 
 func _on_body_entered(body):
-	if body.has_method("damage"):
+	if body.has_method("damage") and body.name != "Boss":
 		body.damage(damage)
 	Effects = get_node_or_null("/root/Game/Effects")
-	if Effects != null:
+	if Effects != null and body.name != "Boss":
 		var explosion = Explosion.instantiate()
 		Effects.add_child(explosion)
 		explosion.global_position = global_position

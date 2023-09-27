@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://j8pij1n4ugvi"]
+
+[ext_resource type="Script" path="res://Enemy/boss_bullet.gd" id="1_je7jb"]
+[ext_resource type="Texture2D" uid="uid://5ng7ua75xuha" path="res://Assets/Assets/Assets/bullet2.png" id="2_4oo6x"]
+
+[node name="boss_bullet" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_je7jb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4oo6x")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(6, -44.8, 6, -43.1, 15, -37.1, 15, -34.7, 21, -26.7, 21, -23.3, 23.4, -9, 21.7, -9, 19.7, 2, 18.3, 2, 11, 17.5, 11, 19.1, 19, 26.1, 19, 28.6, 20.4, 36, 17.7, 36, 11.7, 41, 5.9, 41, 0, 40.3, -6.6, 43, -15.7, 43, -23, 36.9, -23, 28.4, -17.9, 20.7, -26, -2.7, -26, -19.2, -24.7, -27, -23.3, -27, -18.3, -39, -16.6, -39, -9, -44.1, -9, -46.2)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
